@@ -3,6 +3,14 @@ import React from "react";
 import Navbar from "../components/nav";
 import {useRouter} from "next/router";
 import Footer from "../components/footer";
+import NProgress from "nprogress"
+import "nprogress/nprogress.css"
+import router from "next/router";
+
+// NProgress.configure({showSpinner: false});
+router.events.on('routeChangeStart', () => NProgress.start());
+router.events.on('routeChangeComplete', () => NProgress.done());
+router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({Component, pageProps}) {
     const router = useRouter();
