@@ -48,7 +48,7 @@ const Register = ({registerForm}) => {
                 <div className="card flex-shrink-0 mt-5 md:mt-0 md:col-span-2 shadow-lg">
                     <form onSubmit={handleSubmit(data => {
                         postData(data)
-                        console.log(data);
+                        // console.log(data);
                     })}>
                         <div className="divider lg:divider-horizontal"></div>
                         <div className="card-body shadow-md overflow-hidden rounded-md ">

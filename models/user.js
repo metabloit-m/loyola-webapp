@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, 'Please provide your username'],
-        maxlength: [20, 'Username cannot be more than 30 characters'],
+        maxlength: [30, 'Username cannot be more than 30 characters'],
         validate: {
             validator: function usernameValidator(val) {
                 const pattern = /^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$/;

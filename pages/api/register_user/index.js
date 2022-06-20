@@ -17,24 +17,12 @@ export default async function handler(req, res){
             }
             catch (e) {
                 res.status(400).json({
-                    success:false
+                    success:false,
+                    error: e,
                 })
             }
             break;
-        case 'GET':
-            try {
-                const tests = await test.find({ email: req.body.email, password: req.body.password })
-                if(tests.length === 0)
-                    return res.status(400).json({success: false})
-                res.status(201).json({success: true, data:tests})
-            }
-            catch (e) {
-                res.status(400).json({
-                    success: false,
-                    data: e,
-                })
-            }
-            break;
+
         default:
             res.status(400).json({
                 success:false

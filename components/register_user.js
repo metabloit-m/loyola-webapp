@@ -4,26 +4,56 @@ import {useForm} from "react-hook-form";
 import axios from "axios";
 import Link from "next/link";
 
-const postData = async (data) => {
-    axios
-        .post('/api/register_user/', data)
-        .then(function (res) {
+export default function SignUp({registerForm}) {
+    const postData = async (data) => {
+
+        axios({
+            method: 'post',
+            url: '/api/register_user',
+            data: data,
+        })
+            .then(function (res) {
             router.push('/login', {
                 scroll: true,
             });
             // console.log("OK");
         })
-        .catch(function (error) {
-            // console.log(error.message);
-        })
-}
+            .catch(function (error) {
+                // console.log(error);
+            })
 
-export default function SignUp() {
+        // axios
+        //     .post('/api/register_user/', data)
+        //     .then(function (res) {
+        //         router.push('/login', {
+        //             scroll: true,
+        //         });
+        //         console.log("OK");
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+    }
 
     const [file, setFile] = React.useState("");
     const router = useRouter();
     const contentType = 'application/json';
-    const {register, handleSubmit, watch, formState: {errors}} = useForm();
+    const {register, handleSubmit, watch, formState: {errors}} = useForm({
+        defaultValues: {
+            first_name: registerForm.first_name,
+            last_name: registerForm.last_name,
+            middle_name: registerForm.middle_name,
+            email: registerForm.email,
+            username: registerForm.username,
+            dob: registerForm.dob,
+            password: registerForm.password,
+            c_password: registerForm.c_password,
+            f_username: registerForm.f_username,
+            t_username: registerForm.t_username,
+            i_username: registerForm.i_username,
+            phone: registerForm.phone,
+        }
+    });
 
     const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
@@ -46,7 +76,7 @@ export default function SignUp() {
                         <div className="card flex-shrink-0 mt-5 md:mt-0 md:col-span-2 shadow-lg">
                             <form onSubmit={handleSubmit(data => {
                                 postData(data)
-                                console.log(data);
+                                // console.log(data);
                             })}>
                                 <div className="divider lg:divider-horizontal"></div>
                                 <div className="card-body shadow-md overflow-hidden rounded-md ">
