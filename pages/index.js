@@ -34,21 +34,19 @@ export default function Home() {
             </div>
 
             <div className="snap-always snap-start">
-                <div id="details" className="min-h-screen container space-x-4 px-20 mx-auto sm:items-stretch">
-                    <div className="md:grid md:grid-cols-3 items-center place-items-center py-8 mt-10">
+                <div id="details" className="min-h-screen space-x-4 items-center flex justify-center px-8 lg:px-20 mx-auto sm:items-stretch">
+                    <div className="md:grid md:grid-cols-3 items-center place-items-center py-8 mt-10 md:gap-16">
                         <div
                             className="card image-full max-w-sm h-96 mt-4 md:w-full flex flex-col shadow-lg border-gray-700 dark:bg-gray-800 justify-between">
                             <figure>
                                 <Image src="/images/9.png" layout="fill"/>
                             </figure>
                             <div className="card-body">
-                                <h1 className="font-bold mb-3 card-title text-3xl">Staff</h1>
+                                <h1 className="font-bold mb-3 card-title text-2xl font-medium">Staff</h1>
                                 <p className="text-sm ">
                                     Loyola High School consists of very well trained staffs that make sure the school
-                                    consists
-                                    of a very good learning environment and enable students not only excel in academics
-                                    but
-                                    also in extra-curricular activities and being men and women for others.
+                                    consists of a very good learning environment and enable students not only excel in academics
+                                    but also in extra-curricular activities.
                                 </p>
                                 <div className="card-actions justify-end">
                                     <Link href="/staff">
@@ -72,7 +70,7 @@ export default function Home() {
                                 <Image src="/images/13.jpg" layout="fill"/>
                             </figure>
                             <div className="card-body">
-                                <h1 className="font-bold mb-3 card-title text-3xl">Alumni</h1>
+                                <h1 className="font-bold mb-3 card-title text-2xl font-medium">Alumni</h1>
                                 <p className="text-sm">
                                     The Alumni Association consists of those who studied at Loyola High School.
                                     Get to know the members of the Alumni Association
@@ -99,13 +97,11 @@ export default function Home() {
                                 <Image src="/images/11.png" layout="fill"/>
                             </figure>
                             <div className="card-body">
-                                <h1 className="font-bold mb-3 card-title text-3xl">About</h1>
+                                <h1 className="font-bold mb-3 card-title text-3xl font-medium">About</h1>
                                 <p className="text-sm">
                                     Loyola High School is a Jesuit Secondary School offering quality education. It is a
                                     Catholic School open to both boys and girls of all religious persuasions.
-                                    Loyola stands for excellence in both academics and human formation. The goal held
-                                    out to all students at Loyola High School is integrated personal development as
-                                    individuals and as members of the larger society.
+                                    Loyola stands for excellence in both academics and human formation.
                                 </p>
                                 <div className="card-actions justify-end">
                                     <Link href="/about">
@@ -136,7 +132,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div id="contact" className="min-h-screen snap-always snap-start">
+            <div id="contact" className="min-h-screen snap-always snap-start items-center flex ">
                 <div className="p-12 w-full">
                     <div className="md:grid md:grid-cols-3 md:gap-6 md:space-x-72 place-items-center space-y-2 ">
                         <h1 className="text-5xl md:col-span-3 font-light text-center mb-4">Contact Us</h1>

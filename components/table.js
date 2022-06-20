@@ -35,7 +35,7 @@ const TableFooter = ({range, page, setPage, slice}) => {
     }, [setPage, page, slice])
 
     return (
-        <div className="btn-group justify-center p-4">
+        <div className="btn-group flex items-center justify-center p-4">
             {range.map((element, index) => {
                 return (
                     <button key={index} className={`${element === page ? "active" : ""} btn btn-sm`} onClick={() => {
@@ -55,7 +55,11 @@ export default function Table({data, rowsPerPage}) {
     const {slice, tableRange} = useTable(data, page, rowsPerPage);
     return (
         <>
+
             <table className="table table-zebra table-compact mx-auto w-full">
+                <caption>
+                    <div className="divider max-w-7xl self-center w-full">Our Alumni</div>
+                </caption>
                 <thead>
                 <tr>
                     <td>#</td>
