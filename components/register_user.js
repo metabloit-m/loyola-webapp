@@ -225,7 +225,7 @@ export default function SignUp({registerForm}) {
                                                        className="input-group input-group-sm input-group-vertical">
                                                     <span>Facebook username:</span>
                                                     <input type="text"
-                                                           className="input input-sm border-neutral" {...register("f_uname", {
+                                                           className="input input-sm border-neutral" {...register("f_username", {
                                                         pattern: {
                                                             value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm,
                                                             message: 'Valid username required'
@@ -241,7 +241,7 @@ export default function SignUp({registerForm}) {
                                                        className="input-group input-group-sm input-group-vertical">
                                                     <span>Twitter username:</span>
                                                     <input type="text"
-                                                           className="input input-sm border-neutral" {...register("t_uname", {
+                                                           className="input input-sm border-neutral" {...register("t_username", {
                                                         pattern: {
                                                             value: /^[A-Za-z0-9_]{4,15}$/,
                                                             message: 'Valid username is required'
@@ -257,7 +257,7 @@ export default function SignUp({registerForm}) {
                                                        className="input-group input-group-sm input-group-vertical">
                                                     <span>Instagram username:</span>
                                                     <input type="text"
-                                                           className="input input-sm border-neutral" {...register("i_uname", {
+                                                           className="input input-sm border-neutral" {...register("i_username", {
                                                         pattern: {
                                                             value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm,
                                                             message: 'Valid username required'
